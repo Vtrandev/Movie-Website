@@ -8,34 +8,53 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section id="">
-        <nav>
-            <figure>
-                <img src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png" alt="">
-            </figure>
-            <div class="nav__link">
-                <a href="#">Home</a>
-                <a href="#">Find Your Car</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
-        <header>
-            <h1>Browse our cars</h1>
-            <div class="search__container">
-                <input type="text" placeholder="Search by Make, Model, or Keyword" onchange="">
-                <button>Search</button>
-            </div>
-        </header>
-    </section>
-
-    <section id="search">
+    <section id="landing">
         <div class="row">
-            <div class="car-list">
-    
-            </div>
+            <nav class="nav">
+                <figure class="nav__icon">
+                    <img src="./assets/icon.png" alt="">
+                </figure>
+                <div class="nav__link">
+                    <a class='nav__links' href="#">Home</a>
+                    <a class='nav__links' href="#">Movies</a>
+                    <a class='nav__links' href="#">TV Shows</a>
+                    <button><a class='nav__links nav__links--login' href="#">Login</a></button>
+                </div>
+            </nav>
+            <!-- HEADER -->
+            <header class="nav__header">
+                <h1>Search movies</h1>
+                <div class="input__wrapper">
+                    <input class='header__search-input' onchange="onSearchChange(event)" type="text" placeholder="Search by Title">
+                    <button>Search</button>
+                </div>
+            </header>
         </div>
     </section>
 
+    <section id="search">
+        <div class="search__container">
+            <div class="row">
+                <div class="movie-list">
+
+                    <!-- JAVASCRIPT -->
+                    <div class="movie-list__wrapper">
+                        <figure>
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg"
+                                alt="">
+                        </figure>
+                        <h1>Title: Movie Title</h1>
+                        <p>Year: 2000</p>
+                        <p>ID: tt0000000</p>
+                        <p>Type: Movie</p>
+                    </div>
+                    <!-- JAVASCRIPT END -->
+
+
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./app.js"></script>
 </body>
 </html>
