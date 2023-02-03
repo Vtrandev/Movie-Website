@@ -1,31 +1,58 @@
 const movieListEl = document.querySelector('.movie-list')
-const search = localStorage.getItem('search');
+const movieSearch = localStorage.getItem('movieSearch');
+
+// index page.
+
+function showMovie(event) {
+    event.preventDefault();
+    const movieSearch = event.target.value
+    localStorage.setItem('movieSearch', movieSearch);
+    window.location.href = `${window.location.origin}/movies.html`;
+}
+
+// movie page
 
 function onSearchChange(event) {
-    const search = event.target.value;
-    getMovies(search);
+
+    getMovies(event.target.value);
 }
 
-
-async function getMovies(search) {
-    const promise = await fetch(`http://www.omdbapi.com/?apikey=aafd31ec&s=${search}`)
-    // const promise = await fetch(`https://jsonplaceholder.typicode.com/users`)
-    const result = await promise.json();
-
-    movieListEl.innerHTML = result.Search.map((elem) => movieHTML(elem))
+function filterMovie(event) {
+    getMovies(movieSearch, event.target.value);
 }
+
+let pageLoading = false
+
+async function getMovies(search, filter) {
+    const moviePromise = await fetch(`https://www.omdbapi.com/?apikey=aafd31ec&s=${search}`)
+    const movieData = await moviePromise.json();
+
+    if (filter === "OLD_TO_NEW") {
+        movieData.Search.sort((a, b) => (a.Year - b.Year))
+    }
+    else if (filter === "NEW_TO_OLD") {
+        movieData.Search.sort((a, b) => (b.Year - a.Year))
+    }
+
+    movieListEl.innerHTML = movieData.Search.filter((elem, index) => index < 6).map((elem) => movieHTML(elem)).join('')
+}
+
+setTimeout(() => {
+    getMovies(movieSearch);
+  }, 2000);
 
 function movieHTML(movie) {
     return `<div class="movie-list__wrapper">
-    <figure>
-        <img src="${movie.Poster}"
-            alt="">
+    <figure class='search__img--wrapper'>
+        <img class='search__movie--img' src="${movie.Poster}"
+            alt="Movie Poster">
     </figure>
-    <h1>Title: ${movie.Title}</h1>
+    <h1 h1 class="search__movie-title">${movie.Title}</h1>
     <p>Year: ${movie.Year}</p>
     <p>ID: ${movie.imdbID}</p>
     <p>Type: ${movie.Type}</p>
+    </div>
+    <div class="movie__cover--info">
+    <h1>MORE INFO</h1>
     </div>`
 }
-
-getMovies('hello');

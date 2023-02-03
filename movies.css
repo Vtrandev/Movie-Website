@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,7 +16,6 @@ img {
 a {
     text-decoration: none;
     cursor: pointer;
-    position: relative;
 }
 
 .row {
@@ -27,7 +24,7 @@ a {
     margin: 0 auto;
 }
 
-.nav,
+.nav__container,
 .search__container {
     padding: 0 48px;
 }
@@ -52,11 +49,7 @@ NAVIGATION
 
 */
 
-#landing {
-    height: 100vh;
-}
-
-.nav {
+.nav__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,36 +63,18 @@ NAVIGATION
 .nav__link {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 430px;
+
 }
 
 .nav__links {
     display: flex;
     align-items: center;
+    padding: 0 12px;
     color: black;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 1.3px;
 }
-
-.nav__links--hover:hover::after {
-    left: 0;
-    width: 100%;
-    transition: all 300ms ease;
-    background-color: #8446ff;
-}
-
-.nav__links--hover::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 0%;
-    bottom: -3px;
-    right: 0;
-}
-
 
 .nav__links--login {
     color: white;
@@ -116,7 +91,7 @@ NAVIGATION
 }
 
 .nav__header--title {
-    font-size: 50px;
+    font-size: 24px;
     margin-bottom: 32px;
 }
 
@@ -142,12 +117,96 @@ NAVIGATION
 }
 
 .nav__search--button {
-    font-size: 40px;
+    font-size: 20px;
     margin: 0 20px;
-    padding: 16px 48px;
+    padding: 12px 40px;
     border-radius: 20px;
 }
 
 .nav__img--wrapper {
     margin: 0 16px;
+}
+
+/*
+
+SEARCH LIST
+
+*/
+
+.search__container {
+
+}
+
+#filter {
+    margin-bottom: 24px;
+}
+
+.search__loading {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 80px;
+    /* display: flex; */
+    display: none;
+}
+
+.search__loading--visible {
+    display:flex;
+    z-index: 1;
+}
+
+.fa-spinner {
+    animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.movie-list__wrapper {
+    width: calc(95% / 3);
+    padding: 0 24px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.search__img--wrapper {
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.search__movie--img {
+    max-height: 500px;
+}
+
+.search__movie--img:hover {
+    transform: scale(1.05);
+}
+
+.search__movie-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.movie__cover--info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(236, 236, 236, 0.3)
 }

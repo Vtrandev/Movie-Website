@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinker</title>
+    <link rel="stylesheet" href="./movies.css">
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <section id="landing">
+        <div class="row">
+            <nav class="nav__container">
+                <figure class="nav__icon">
+                    <img src="./assets/icon.png" alt="">
+                </figure>
+                <div class="nav__link">
+                    <a class='nav__links' href="./index.html">Home</a>
+                    <a class='nav__links' href="./movies.html">Movies/TV Shows</a>
+                    <button class="nav__links--login"><a class='nav__links nav__links--login' href="#">Login</a></button>
+                </div>
+            </nav>
+            <!-- HEADER -->
+            <header class="nav__header">
+                <h1 class="nav__header--title">Search movies</h1>
+                <div class="input__wrapper">
+                    <input class='header__search--input' onchange="onSearchChange(event)" type="text" placeholder="Search by Title">
+                    <button class='nav__search--button'><i class="fa fa-search"></i></button>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <section id="search">
+        <div class="search__container">
+            <div class="row">
+
+                <select id="filter" onchange="filterMovie(event)">
+                    <option value="" disabled selected>Sort</option>
+                    <option value="OLD_TO_NEW">Year, Old to New</option>
+                    <option value="NEW_TO_OLD">Year, New to Old</option>
+                </select>
+
+                <div class="search__loading">
+                    <i class="fas fa-spinner"></i>
+                  </div>
+
+                <div class="movie-list">
+
+                    <!-- JAVASCRIPT -->
+                    <!-- <div class="movie-list__wrapper">
+                        <figure>
+                            <img class='search__movie--img' src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg"
+                                alt="">
+                        </figure>
+                        <h1 class="search__movie-title">Title: Movie Title</h1>
+                        <p>Year: 2000</p>
+                        <p>ID: tt0000000</p>
+                        <p>Type: Movie</p>
+                    </div> -->
+                    <!-- JAVASCRIPT END -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
