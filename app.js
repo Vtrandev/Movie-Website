@@ -12,8 +12,15 @@ function showMovie(event) {
 
 // movie page
 
-function onSearchChange(event) {
+function openMenu() {
+    document.body.classList += ' menu--open';
+}
 
+function closeMenu() {
+    document.body.classList.remove('menu--open');
+}
+
+function onSearchChange(event) {
     getMovies(event.target.value);
 }
 
@@ -43,16 +50,16 @@ setTimeout(() => {
 
 function movieHTML(movie) {
     return `<div class="movie-list__wrapper">
-    <figure class='search__img--wrapper'>
-        <img class='search__movie--img' src="${movie.Poster}"
-            alt="Movie Poster">
-    </figure>
-    <h1 h1 class="search__movie-title">${movie.Title}</h1>
-    <p>Year: ${movie.Year}</p>
-    <p>ID: ${movie.imdbID}</p>
-    <p>Type: ${movie.Type}</p>
-    </div>
-    <div class="movie__cover--info">
-    <h1>MORE INFO</h1>
-    </div>`
+                <div class='search__img--wrapper'>
+                    <img class='search__movie--img' src="${movie.Poster}"
+                        alt="Movie Poster">
+                    <div class="movie__cover--info">
+                    <h1 class='movie__more--info'>MORE INFO</h1>
+                    </div>
+                </div>
+                <h1 class="search__movie-title">${movie.Title}</h1>
+                <p>Year: ${movie.Year}</p>
+                <p>ID: ${movie.imdbID}</p>
+                <p>Type: ${movie.Type}</p>
+        </div>`
 }

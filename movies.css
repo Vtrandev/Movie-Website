@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,9 +15,13 @@ img {
     width: 100%;
 }
 
-a {
+a, button {
     text-decoration: none;
     cursor: pointer;
+}
+
+li {
+    list-style: none;
 }
 
 .row {
@@ -91,7 +97,7 @@ NAVIGATION
 }
 
 .nav__header--title {
-    font-size: 24px;
+    font-size: 50px;
     margin-bottom: 32px;
 }
 
@@ -129,13 +135,62 @@ NAVIGATION
 
 /*
 
+BURGER MENU
+
+*/
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    border: none;
+    color: #7342d6;
+    display: none;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: rgba(63, 63, 63, 1);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    transform: translate(100%);
+}
+
+.menu--open .menu__backdrop {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.menu__list {
+    padding: 32px 0;
+}
+
+.nav__links--menu {
+    color: white;
+    font-size: 24px;
+}
+
+.btn__menu--close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 8px;
+    color: white;
+}
+
+
+/*
+
 SEARCH LIST
 
 */
 
-.search__container {
-
-}
 
 #filter {
     margin-bottom: 24px;
@@ -175,26 +230,54 @@ SEARCH LIST
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .movie-list__wrapper {
     width: calc(95% / 3);
     padding: 0 24px;
     margin-bottom: 24px;
-    position: relative;
 }
 
 .search__img--wrapper {
     overflow: hidden;
     margin-bottom: 8px;
+    position: relative;
 }
 
 .search__movie--img {
     max-height: 500px;
 }
 
-.search__movie--img:hover {
+.movie__cover--info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 236, 236, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+}
+
+.movie__cover--info:hover {
+    opacity: 01;
+}
+
+.movie__more--info {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 300ms, transform 450ms ease;
+}
+
+.movie-list__wrapper:hover .movie__more--info {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.movie-list__wrapper:hover .search__movie--img {
     transform: scale(1.05);
 }
 
@@ -203,10 +286,76 @@ SEARCH LIST
     margin-bottom: 8px;
 }
 
-.movie__cover--info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(236, 236, 236, 0.3)
+#filter {
+    font-size: 20px;
+    font-weight: 500;
+    border: 2px solid #6030b1;
+    border-radius: 20px;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: rgb(211, 187, 255)
+}
+
+.footer__icon {
+    width: 200px;
+    padding: 24px 0;
+}
+
+.copyright {
+    padding-bottom: 24px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .movie-list__wrapper {
+        width: calc(100% / 2);
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+    .nav__link {
+        display: none;
+    }
+
+    .nav__header--title {
+        font-size: 32px;
+    }
+
+    .input__wrapper {
+        padding: 0 32px;
+    }
+
+    .header__search--input {
+        font-size: 18px;
+    }
+    .nav__search--button {
+        font-size: 24px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    .movie-list__wrapper {
+        width: 100%;
+    }
 }

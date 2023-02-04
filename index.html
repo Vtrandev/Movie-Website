@@ -23,6 +23,27 @@
                     <a class='nav__links nav__links--hover' href="./movies.html">Movies/TV Shows</a>
                     <button class="nav__links--login"><a class='nav__links nav__links--login' href="#">Login</a></button>
                 </div>
+
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fas fa-bars" ></i>
+                </button>
+                <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <li class="menu__list">
+                            <a class='nav__links nav__links--menu' href="./index.html" onclick="closeMenu()">Home</a>
+                        </li>
+                        <li class="menu__list">
+                            <a class='nav__links nav__links--menu' href="./movies.html" onclick="closeMenu()">Movies/TV Shows</a>
+                        </li>
+                        <li class="menu__list">
+                            <button class="nav__links--login"><a class='nav__links nav__links--login' href="#" onclick="closeMenu()">Login</a></button>
+                        </li>
+                    </ul>
+                </div>
+
             </nav>
             <!-- HEADER -->
             <header class="nav__header">
@@ -39,6 +60,16 @@
                 </figure>
             </header>
         </div>
+    </section>
+
+    <footer>
+        <figure class="footer__icon">
+            <img src="./assets/icon.png" alt="">
+        </figure>
+        <div class="copyright">
+            Copyright &copy 2023 Vuong Tran
+        </div>
+    </footer>
     <script src="./app.js"></script>
 </body>
 </html>
