@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinker</title>
+    <link rel="stylesheet" href="./movies.css">
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <section id="landing">
+        <div class="row">
+            <nav class="nav__container">
+                <figure class="nav__icon">
+                    <a href="./index.html"><img src="./assets/icon.png" alt=""></a>
+                </figure>
+                <div class="nav__link">
+                    <a class='nav__links' href="./index.html">Home</a>
+                    <a class='nav__links' href="./movies.html">Movies/TV Shows</a>
+                    <button class="nav__links--login"><a class='nav__links nav__links--login' href="#">Login</a></button>
+                </div>
+
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fas fa-bars" ></i>
+                </button>
+                <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <li class="menu__list">
+                            <a class='nav__links nav__links--menu' href="./index.html" onclick="closeMenu()">Home</a>
+                        </li>
+                        <li class="menu__list">
+                            <a class='nav__links nav__links--menu' href="./movies.html" onclick="closeMenu()">Movies/TV Shows</a>
+                        </li>
+                        <li class="menu__list">
+                            <button class="nav__links--login"><a class='nav__links nav__links--login' href="#" onclick="closeMenu()">Login</a></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <!-- HEADER -->
+            <header class="nav__header">
+                <h1 class="nav__header--title">Search movies</h1>
+                <div class="input__wrapper">
+                    <input class='header__search--input' onchange="onSearchChange(event)" type="text" placeholder="Search by Title">
+                    <button class='nav__search--button'><i class="fa fa-search"></i></button>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <section id="movie">
+        <div class="search__container">
+            <div class="row">
+
+                <div class="movie">
+
+                    <!-- JAVASCRIPT -->
+                    <!-- <div class="movie__details">
+                        <figure>
+                            <img class='movie__detail--img' src="https://m.media-amazon.com/images/M/MV5BNzlkNzVjMDMtOTdhZC00MGE1LTkxODctMzFmMjkwZmMxZjFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                                alt="Movie Poster">
+                        </figure>
+                        <div class="movie__detail--wrapper">
+                            <h1 class="search__movie-title">Title: Movie Title</h1>
+                            <p><strong>Title</strong>: "The Fast and the Furious"</p>
+                            <p><strong>Year</strong>: "2001"</p>
+                            <p><strong>Rated</strong>: "PG-13"</p>
+                            <p><strong>Released</strong>: "22 Jun 2001"</p>
+                            <p><strong>Runtime</strong>: "106 min"</p>
+                            <p><strong>Genre</strong>: "Action, Crime, Thriller"</p>
+                            <p><strong>Director</strong>: "Rob Cohen"</p>
+                            <p><strong>Writer</strong>: "Ken Li, Gary Scott Thompson, Erik Bergquist"</p>
+                            <p><strong>Actors</strong>: "Vin Diesel, Paul Walker, Michelle Rodriguez"</p>
+                            <p><strong>Plot</strong>: "Los Angeles police officer Brian O'Conner must decide where his loyalty really lies when he becomes enamored
+                                with the street racing world he has been sent undercover to destroy."</p>
+                            <p><strong>Language</strong>: "English, Spanish"</p>
+                            <p><strong>Country</strong>: "United States, Germany"</p>
+                            <p><strong>Awards</strong>: "11 wins & 18 nominations"</p>
+                        </div>
+                    </div> -->
+                    <!-- JAVASCRIPT END -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <figure class="footer__icon">
+            <img src="./assets/icon.png" alt="">
+        </figure>
+        <div class="copyright">
+            Copyright &copy 2023 Vuong Tran
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+</html>

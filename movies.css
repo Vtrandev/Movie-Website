@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 img {
@@ -318,10 +319,43 @@ footer {
     padding-bottom: 24px;
 }
 
+/*
 
+MOVIE DETAILS
 
+*/
 
-@media (max-width: 768px) {
+#movie p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.movie {
+    display: flex;
+    justify-content: center;
+    padding: 0 48px;
+    padding-bottom: 48px;
+}
+
+.movie__details {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.movie__detail--img {
+    display: flex;
+    min-width: 400px;
+}
+
+.movie__detail--wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 48px;
+    text-align: left;
+}
+
+@media (max-width: 958px) {
     .movie-list__wrapper {
         width: calc(100% / 2);
     }
@@ -351,6 +385,14 @@ footer {
 
     footer {
         font-size: 16px;
+    }
+
+    .movie__details {
+        flex-direction: column;
+    }
+
+    .movie__detail--img {
+        padding: 40px;
     }
 }
 
