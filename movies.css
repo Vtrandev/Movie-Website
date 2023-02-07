@@ -391,13 +391,30 @@ MOVIE DETAILS
         flex-direction: column;
     }
 
+    .movie__detail--wrapper {
+        padding-left: 30px;
+    }
+
     .movie__detail--img {
-        padding: 40px;
+        padding: 30px;
     }
 }
 
 @media (max-width: 550px) {
+    .movie {
+        padding: 0;
+    }
+
+    .movie__detail--img {
+        padding: 12px;
+        min-width: 100px;
+    }
+
     .movie-list__wrapper {
         width: 100%;
+    }
+
+    .movie__detail--wrapper {
+        padding-left: 12px;
     }
 }

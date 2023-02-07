@@ -50,7 +50,7 @@
             <header class="nav__header">
                 <h1 class="nav__header--title">Search movies</h1>
                 <div class="input__wrapper">
-                    <input class='header__search--input' onchange="onSearchChange(event)" type="text" placeholder="Search by Title">
+                    <input class='header__search--input' onchange="showMovie(event)" type="text" placeholder="Search by Title">
                     <button class='nav__search--button'><i class="fa fa-search"></i></button>
                 </div>
             </header>
@@ -66,25 +66,23 @@
                     <!-- JAVASCRIPT -->
                     <!-- <div class="movie__details">
                         <figure>
-                            <img class='movie__detail--img' src="https://m.media-amazon.com/images/M/MV5BNzlkNzVjMDMtOTdhZC00MGE1LTkxODctMzFmMjkwZmMxZjFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                            <img class='movie__detail--img' src="${movie.Poster}"
                                 alt="Movie Poster">
                         </figure>
                         <div class="movie__detail--wrapper">
-                            <h1 class="search__movie-title">Title: Movie Title</h1>
-                            <p><strong>Title</strong>: "The Fast and the Furious"</p>
-                            <p><strong>Year</strong>: "2001"</p>
-                            <p><strong>Rated</strong>: "PG-13"</p>
-                            <p><strong>Released</strong>: "22 Jun 2001"</p>
-                            <p><strong>Runtime</strong>: "106 min"</p>
-                            <p><strong>Genre</strong>: "Action, Crime, Thriller"</p>
-                            <p><strong>Director</strong>: "Rob Cohen"</p>
-                            <p><strong>Writer</strong>: "Ken Li, Gary Scott Thompson, Erik Bergquist"</p>
-                            <p><strong>Actors</strong>: "Vin Diesel, Paul Walker, Michelle Rodriguez"</p>
-                            <p><strong>Plot</strong>: "Los Angeles police officer Brian O'Conner must decide where his loyalty really lies when he becomes enamored
-                                with the street racing world he has been sent undercover to destroy."</p>
-                            <p><strong>Language</strong>: "English, Spanish"</p>
-                            <p><strong>Country</strong>: "United States, Germany"</p>
-                            <p><strong>Awards</strong>: "11 wins & 18 nominations"</p>
+                            <h1 class="search__movie-title">Title: ${movie.Title}</h1>
+                            <p><strong>Year</strong>: ${movie.Year}</p>
+                            <p><strong>Rated</strong>: ${movie.Rated}</p>
+                            <p><strong>Released</strong>: ${movie.Released}</p>
+                            <p><strong>Runtime</strong>: ${movie.Runtime}</p>
+                            <p><strong>Genre</strong>: ${movie.Genre}</p>
+                            <p><strong>Director</strong>: ${movie.Director}</p>
+                            <p><strong>Writer</strong>: ${movie.Writer}</p>
+                            <p><strong>Actors</strong>: ${movie.Actors}</p>
+                            <p><strong>Plot</strong>: ${movie.Plot}</p>
+                            <p><strong>Language</strong>: ${movie.Language}</p>
+                            <p><strong>Country</strong>: ${movie.Country}</p>
+                            <p><strong>Awards</strong>: ${movie.Awards}</p>
                         </div>
                     </div> -->
                     <!-- JAVASCRIPT END -->

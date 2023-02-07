@@ -1,13 +1,13 @@
+
 const movieListEl = document.querySelector('.movie-list');
 const movieSearch = localStorage.getItem('movieSearch');
 
 // index page.
 
 function showMovie(event) {
-    event.preventDefault();
-    const movieSearch = event.target.value
-    localStorage.setItem('movieSearch', movieSearch);
-    window.location.href = `${window.location.origin}/movies.html`;
+    localStorage.setItem('movieSearch', event.target.value);
+    window.location.href = `./movies.html`;
+    // window.location.href = `${window.location.origin}/movies.html`;
 }
 
 // movie page
@@ -28,7 +28,7 @@ function filterMovie(event) {
     getMovies(movieSearch, event.target.value);
 }
 
-let pageLoading = false
+// let pageLoading = false
 
 async function getMovies(search, filter) {
     const moviePromise = await fetch(`https://www.omdbapi.com/?apikey=aafd31ec&s=${search}`)
@@ -59,24 +59,26 @@ function movieHTML(movie) {
                 </div>
                 <h1 class="search__movie-title">${movie.Title}</h1>
                 <p>Year: ${movie.Year}</p>
-                <p>ID: ${movie.imdbID}</p>
                 <p>Type: ${movie.Type}</p>
         </div>`
 }
 
-// movie detail page.
+// 
+//   movie detail page.
+// 
+
 
 const movieDetailEl = document.querySelector('.movie');
 const movieDetail = localStorage.getItem("movieDetail")
 
 function showMovieDetail(imdbID) {
-    window.location.href = `${window.location.origin}/moviedetails.html`;
+    window.location.href = `./moviedetails.html`;
+    // window.location.href = `${window.location.origin}/moviedetails.html`;
     localStorage.setItem('movieDetail', imdbID);
 }
 
-async function movieDetails(event) {
-    console.log
-    const moviePromise = await fetch(`https://www.omdbapi.com/?apikey=aafd31ec&i=${event}`);
+async function movieDetails(movie) {
+    const moviePromise = await fetch(`https://www.omdbapi.com/?apikey=aafd31ec&i=${movie}`);
     const movieDetailsData = await moviePromise.json();
     movieDetailEl.innerHTML = movieDetailHTML(movieDetailsData);
 }

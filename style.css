@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 img {
@@ -57,7 +58,7 @@ NAVIGATION
 */
 
 #landing {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .nav {
@@ -178,7 +179,7 @@ BURGER MENU
     top: 0;
     left: 0;
     right: 0;
-    z-index: 11;
+    z-index: -1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,6 +189,7 @@ BURGER MENU
 }
 
 .menu--open .menu__backdrop {
+    z-index: 11;
     opacity: 1;
     transform: translate(0);
 }
