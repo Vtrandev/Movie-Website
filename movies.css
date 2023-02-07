@@ -114,9 +114,11 @@ NAVIGATION
     display: flex;
     justify-content: center;;
 }
+
 .header__search--input {
     width: 80%;
     border-radius: 30px;
+    padding-left: 20px;
 }
 
 .header__search--input:focus {

@@ -1,6 +1,7 @@
 
 const movieListEl = document.querySelector('.movie-list');
 const movieSearch = localStorage.getItem('movieSearch');
+let filter = '';
 
 // index page.
 
@@ -21,7 +22,8 @@ function closeMenu() {
 }
 
 function onSearchChange(event) {
-    getMovies(event.target.value);
+    localStorage.setItem('movieSearch', event.target.value);
+    getMovies(event.target.value, filter);
 }
 
 function filterMovie(event) {
