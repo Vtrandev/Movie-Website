@@ -44,7 +44,7 @@ async function getMovies(search, filter) {
         movieData.Search.sort((a, b) => (b.Year - a.Year))
     }
 
-    movieListEl.innerHTML = movieData.Search.filter((elem, index) => index < 6).map((elem) => movieHTML(elem)).join('')
+    movieListEl.innerHTML = movieData.Search.slice(0, 6).map((elem) => movieHTML(elem)).join('')
 }
 
 setTimeout(() => {
