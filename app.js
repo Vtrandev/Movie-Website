@@ -27,6 +27,7 @@ function onSearchChange(event) {
 }
 
 function filterMovie(event) {
+    const movieSearch = localStorage.getItem('movieSearch');
     getMovies(movieSearch, event.target.value);
 }
 
